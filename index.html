@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>用 COCO-SSD 辨識圖片物件 - August - Let's Write</title>
+    <link rel="canonical" href="https://www.letswrite.tw/coco-ssd/"/>
+    <meta property="og:url" content="https://letswritetw.github.io/letswrite-coco-ssd/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Let's Write"/>
+    <meta property="og:title" content="用 COCO-SSD 辨識圖片物件 - Augustus - Let's Write"/>
+    <meta itemprop="name" content="用 COCO-SSD 辨識圖片物件 - Augustus - Let's Write"/>
+    <meta name="description" content="用 COCO-SSD 辨識圖片物件"/>
+    <meta property="og:description" content="用 COCO-SSD 辨識圖片物件"/>
+    <meta itemprop="description" content="用 COCO-SSD 辨識圖片物件"/>
+    <meta itemprop="image" content="https://letswritetw.github.io/letswrite-coco-ssd/fb.jpg"/>
+    <meta property="og:image" content="https://letswritetw.github.io/letswrite-coco-ssd/fb.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="用 COCO-SSD 辨識圖片物件"/>
+    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png?ckcachebust=739206350"/>
+    <script src="https://cdn.tailwindcss.com?ckcachebust=9F89B49E6E4B81EB9A3EF6A5D8924461"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: '#42A6F7',
+              mainHover: '#167FFF'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="dist/style.min.css?ckcachebust=999883CEE0EF51FBEA230F0040EF8784"/>
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PGQ9WQT');
+    </script>
+  </head>
+  <body class="bg-neutral-800 text-white">
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <div class="container mx-auto p-8 transition-opacity" id="app" v-cloak="v-cloak">
+      <div class="text-center">
+        <h1 class="mb-4 font-bold text-4xl">用 COCO-SSD 辨識圖片物件</h1>
+        <p>筆記文：<a class="text-main hover:text-mainHover" href="https://www.letswrite.tw/coco-ssd/">Let's Write</a></p>
+      </div>
+      <hr class="my-8 mx-auto max-w-3xl border-t border-gray-500 border-dashed"/>
+      <section class="grid-cols-3 gap-8 sm:grid">
+        <div class="max-[640px]:mb-8">
+          <h2 class="text-2xl font-bold mb-4">上傳圖片</h2>
+          <div>
+            <input class="block w-full px-3 py-2 mt-2 text-sm text-gray-600 bg-white border border-gray-200 rounded-lg file:bg-main file:hover:bg-mainHover file:text-white file:text-sm file:px-4 file:py-1 file:border-none file:rounded-full placeholder-gray-400/70 focus:border-main focus:outline-none focus:ring focus:ring-mainHover focus:ring-opacity-40 cursor-pointer" type="file" ref="photo" :class="{ 'pointer-events-none': loading }" accept="image/*" @change="photoHandler"/>
+          </div>
+        </div>
+        <div class="col-span-2">
+          <h2 class="text-2xl font-bold mb-4">{{ loading ? '辨識中...' : '辨識結果' }}</h2>
+          <p class="mb-2" v-for="(r, i) in result">{{ i + 1 }}. {{ r.class }}：{{ r.score }}</p>
+          <div v-show="loading">
+            <div class="animate-pulse">
+              <div class="w-full h-64 bg-gray-300 rounded-lg md:h-72 dark:bg-gray-600"></div>
+            </div>
+          </div>
+          <div v-show="!loading">
+            <canvas class="w-full" id="canvas"></canvas>
+          </div>
+        </div>
+      </section>
+      <hr class="my-8 mx-auto max-w-3xl border-t border-gray-500 border-dashed"/>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.27/vue.global.prod.min.js?ckcachebust=739206350"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs?ckcachebust=739206350"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd?ckcachebust=739206350"></script>
+    <script src="dist/main.min.js?ckcachebust=79135263DDD0969C8962DBF0E46DF097"></script>
+  </body>
+</html>
