@@ -1,4 +1,4 @@
-# 用 Tensorflow.js COCO-SSD 辨識圖片物件
+# 用 TensorFlow.js COCO-SSD 辨識圖片物件
 
 Demo：[Demo](https://letswritetw.github.io/coco-ssd/)
 
