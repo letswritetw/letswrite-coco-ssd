@@ -25,6 +25,19 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/coco-ssd.jpg" : {
+      "ft" : 16384,
+      "iS" : 664614,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/coco-ssd.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/dist\/main.min.js" : {
       "bF" : 0,
       "ft" : 64,

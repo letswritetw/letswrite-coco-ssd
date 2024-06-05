@@ -32,15 +32,15 @@ const app = createApp({
         console.log(this.result);
 
 
-        this.drawFace(imageElement, this.result);
+        this.drawBox(imageElement, this.result);
 
         // 清除暫時創建的 URL 資源
         URL.revokeObjectURL(imageElement.src);
 
       };
     },
-    // 標示頭像
-    async drawFace(imageElement, predictions) {
+    // 標示範圍
+    async drawBox(imageElement, predictions) {
       const canvas = document.getElementById('canvas');
       const context = canvas.getContext('2d');
 
